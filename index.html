@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<title>Parkour: Playing in Air</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="plugins/jquery.fitvids.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="http://www.youtube.com/iframe_api"></script>
+  <link href="jquery.bxslider.css" rel="stylesheet" />
+  <script src="js/tabletop.js"></script>
+  <script src="js/newsquiz.min.js"></script>
+  <script>"js/jquery.iPicture-1.0.0/jquery-1.6.2.min.js"</script>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/jquery.iPicture.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+        
+</head>
+
+<body>
+
+    
+<div class="container">
+<div class="row">
+    <div class="col-md-12" "col-xs-12">
+  
+<!--TITLE-->
+  
+        <div class="title-container"><img src="images/title.jpg"><img src="images/joel-graffitti.jpg" title="This biblical quote refers to locusts, but it fittingly describes people who practice parkour."></div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-2 col-md-0 col-xs-0 col-sm-0"></div>
+        <div class="col-lg-8 col-md-12 col-xs-12 col-sm-12">
+            <br>
+
+<!--SLIDER INFO-->
+
+<ul class="bxslider">
+    
+  <li><img id="eyeview" src="images/eyeview.gif" width="100%"></li> 
+  <li><img src="images/Greenrail.jpg" title="Parkour is a physical discipline and way of life, similar to a martial art, but without combat. Its historical origins date at least to Frenchman Georges H&eacute;bert's Natural Method (La Methode Naturelle), intended for military obstacle course training in the early 1900s."/></li>
+   <li><img src="images/Parkour_welt.jpg" title="David Belle and Sebastian Foucan developed parkour in the gritty suburbs of Paris in the 1980s, calling it 'l'art du displacement' (the art of movement) and naming their group 'Yamakasi' ('strong man'). Now a worldwide movement, parkour practicioners are called 'traceurs.'"/></li>
+  <li><img src="images/jump.jpg" title="The goal of parkour is to travel from point A to point B as efficiently as humanly possible, moving fluidly, calmly, and without fear. Doing this requires much training to improve strength and precision."/></li>
+  <li><img src="images/leap-num-circles.jpg" title="1) & 2) Traceurs jump over bars and walls rather than going around them. 3) Swinging the arms generates torque to propel the body forward. 4) Thin, single-soled shoes are best for parkour because they put the traceur in closer contact with his environment and are better for climbing. "></li>
+  <li><img id="cat-leap" width="368" src="images/Cat_Leap1-static.jpg" title="Hover over the images to see the following parkour techniques: 1) Cat leap, 2) Turn vault, 3) Underbar, and Tic-tac" href="https://www.youtube.com/watch?v=_G9WeJ9YUxo"><img id="turn-vault" width="368" src="images/Turn_Vault1-static.jpg"><img id="underbar" width="367" src="images/Underbar-static.jpg"><img id="tictac" width="369" src="images/tictac-static.jpg"</li>
+  <li><img src="images/Street_jump.JPG" title="When infused with creative, free and playful movement, the discipline is called 'freerunning.' It's possible to combine both freerunning and parkour to develop one's own style."/></li>
+  <li><img id="parkour1" src="images/parkour6.jpg" height="228" align="middle" title="Hover to see if you can find differences in style between parkour (top) and freerunning (bottom)."><img id="freerunning" height="228" align="middle" src="images/free-running4.jpg"</li>
+  <li><img src="images/1024px-Traceur_in_Portsmouth,_England.jpg" title="For the traceur, victory lies in defeating one's own limitations, and to live according to Chuang Tzu's words: 'Flow with whatever may happen, and let your mind be free: Stay centered by accepting whatever you are doing.
+  This is the ultimate.'"</li>
+  <li><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d110813865.58777268!2d-97.431894!3d32.04839475744826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sparkour!5e0!3m2!1sen!2sus!4v1393164704958" width="100%" height="450" frameborder="0" scrolling="no" style="border:0"></iframe></li>
+    <!--NEWSQUIZ -->
+  <li><h3>Time for a quiz!</h3><span id="quiz_container"></span></li>
+
+ <!--CREDITS-->
+  <li><img src="images/credits.jpg"></li>
+  <li><img src="images/credits2.jpg"</li>
+</ul>
+
+
+<br>
+
+
+
+<script>
+$(document).ready(function(){
+    
+
+//LOAD SLIDER   
+  $('.bxslider').bxSlider({
+  mode: 'fade',
+  captions: true,
+  adaptiveHeight: true,
+  video: true,
+  oneToOneTouch: true,
+  pagerType: 'short',
+  preventDefaultSwipeX: false,
+  preventDefaultSwipeY: false,
+  swipeThreshold: 20,
+  slideMargin: 0
+ 
+  
+    
+  });
+ 
+ 
+ //LOAD QUIZ
+ 
+  var quiz = jQuery('#quiz_container').quiz('0AsYd2Ac46wYWdGt6SDgwSzVZV2ZRVWF4ekRmeXNqQ2c');
+
+
+//MAKE GIFs PLAY ON HOVER
+
+ $(function() {
+        $("#turn-vault").hover(
+             function() {
+                $(this).attr("src", "images/Turn_Vault.gif");
+            },
+             function() {
+                $(this).attr("src", "images/Turn_Vault1-static.jpg");
+            }
+        );
+        $("#cat-leap").hover(
+            function() {
+                $(this).attr("src", "images/Cat_Leap.gif");
+            },
+            function() {
+                $(this).attr("src", "images/Cat_Leap1-static.jpg");
+            }
+        );
+         $("#underbar").hover(
+            function() {
+                $(this).attr("src", "images/Underbar.gif");
+            },
+            function() {
+                $(this).attr("src", "images/Underbar-static.jpg");
+            }
+        );
+         $("#shadow").hover(
+            function() {
+                $(this).attr("src", "images/wall-climb.gif");
+            },
+            function() {
+                $(this).attr("src", "images/climber2.jpg");
+            }
+       
+         );
+         $("#tictac").hover(
+            function() {
+                $(this).attr("src", "images/tictac.gif");
+            },
+            function() {
+                $(this).attr("src", "images/tictac-static.jpg");
+            }
+       
+         );
+         
+        $("#freerunning").hover(
+            function() {
+                $(this).attr("src", "images/free-running.gif");
+            },
+            function() {
+                $(this).attr("src", "images/free-running4.jpg");
+            }
+       
+         );
+
+        $("#eyeview").hover(
+            function() {
+                $(this).attr("src", "images/eyeview.jpg");
+            },
+            function() {
+                $(this).attr("src", "images/eyeview.gif");
+            }
+        );
+        
+          $("#parkour1").hover(
+            function() {
+                $(this).attr("src", "images/parkour.gif");
+            },
+            function() {
+                $(this).attr("src", "images/parkour6.jpg");
+            }
+       
+         );
+    });
+ });
+
+ 
+
+</script>
+
+
+<!-- SHADOW MAN IMAGE -->
+
+</div>
+        <div class="col-md-2"><div class="shadow-man"><img id="shadow" src="images/climber2.jpg"></div>
+    </div>
+</div>
+
+</div>
+</div>
+    </div>
+    
+</body>
+  <script src="js/bootstrap.min.js"></script>
+  
+
+</html>
