@@ -13,7 +13,7 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/mystyle.css" rel="stylesheet">
-        
+  <link href="css/jquery.qtip.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
   
 <!--TITLE-->
   
-        <div class="title-container"><img src="images/title.jpg" title="This slider will teach you the basics about Parkour and freerunning."><a href="https://www.youtube.com/watch?v=08x3P2E122U"><img src="images/joel-graffitti.jpg" title="This biblical quote refers to locusts, but it fittingly
+        <div class="title-container"><img id="one" src="images/title.jpg" alt="This slider will teach you the basics about Parkour and freerunning."><a href="https://www.youtube.com/watch?v=08x3P2E122U"><img id="two" src="images/joel-graffitti.jpg" alt="This biblical quote refers to locusts, but it fittingly
         describes people who practice parkour."></a></div>
     </div>
 </div>
@@ -67,7 +67,25 @@
 <script>
 $(document).ready(function(){
     
+$('#one').qtip({
+  content: {
+  text: 'This slider will teach you the basics about Parkour and freerunning.'
+  }
+});
 
+ $('#two').qtip({
+  content: {
+    text: 'This biblical quote refers to locusts, but it fittingly describes people who practice parkour.'
+  }
+ 
+});
+
+ $('#man').qtip({
+  content: {
+    text: 'This is not a gorilla, but is the shadow of a guy doing parkour in Montreal. Click to view the image'
+  }
+ });
+ 
 //LOAD SLIDER   
   $('.bxslider').bxSlider({
   mode: 'fade',
@@ -118,15 +136,7 @@ $(document).ready(function(){
                 $(this).attr("src", "images/Underbar-static.jpg");
             }
         );
-         $("#shadow").hover(
-            function() {
-                $(this).attr("src", "images/wall-climb.gif");
-            },
-            function() {
-                $(this).attr("src", "images/climber2.jpg");
-            }
-       
-         );
+      
          $("#tictac").hover(
             function() {
                 $(this).attr("src", "images/tictac.gif");
@@ -185,15 +195,20 @@ $(document).ready(function(){
 
 <!-- SHADOW MAN IMAGE -->
 
-</div>
-        <div class="col-md-2"><div class="shadow-man"><img id="shadow" src="images/climber2.jpg"></div>
+
+    </div>
+        <div class="col-md-2"><a href="http://upload.wikimedia.org/wikipedia/commons/2/24/Parkour-MontrealPK-Oct02-2005094.jpg"><div class="shadow-man"><img id="man" src="images/climber2.jpg" title="This is not a gorilla. It's the shadow of a traceur climbing a wall in Montreal. Click to view the image."></a></div>
     </div>
 </div>
 
 </div>
 </div>
     </div>
-    
+    <!-- Include either the minifed or production version, NOT both!! -->
+<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+
+<!-- Optional: imagesLoaded script to better support images inside your tooltips -->
+<script type="text/javascript" src="js/imagesloaded.pkg.min.js"></script>
 </body>
   <script src="js/bootstrap.min.js"></script>
   
